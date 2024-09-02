@@ -1,0 +1,52 @@
+{
+    "total": 6,
+    "hasNext": true,
+    "items": [
+        {
+            "chaveDetalhe": "PROAIR&$ZZZ&12@07@24&12@07@24$12@07@24&0$99999&$ZZZZZZ",
+            "5238-8": 18915.57,
+            "PAYCASH": 12934.71,
+            "empresa": "PROAIR",
+            "BANESPA": 71333.02,
+            "ITAU": 198464.3,
+            "totalEmpresa": 301647.6
+        },
+        {
+            "chaveDetalhe": "PROPEC&$ZZZ&12@07@24&12@07@24$12@07@24&0$99999&$ZZZZZZ",
+            "empresa": "PROPEC",
+            "ITAU": 388.89,
+            "totalEmpresa": 388.89
+        },
+        {
+            "chaveDetalhe": "PROTEGE&$ZZZ&12@07@24&12@07@24$12@07@24&0$99999&$ZZZZZZ",
+            "5238-8": 29145.93,
+            "BRADESCO": 2520.18,
+            "empresa": "PROTEGE",
+            "BANESPA": 173594.67,
+            "ITAU": 1206509.24,
+            "totalEmpresa": 1411770.02
+        },
+        {
+            "chaveDetalhe": "PROTEGE CARGO&$ZZZ&12@07@24&12@07@24$12@07@24&0$99999&$ZZZZZZ",
+            "empresa": "PROTEGE CARGO",
+            "ITAU": 18287.65,
+            "totalEmpresa": 18287.65
+        },
+        {
+            "chaveDetalhe": "PROTEGE SERV.&$ZZZ&12@07@24&12@07@24$12@07@24&0$99999&$ZZZZZZ",
+            "empresa": "PROTEGE SERV.",
+            "BANESPA": 3516.88,
+            "ITAU": 15206.98,
+            "totalEmpresa": 18723.86
+        },
+        {
+            "5238-8": 48061.5,
+            "PAYCASH": 12934.71,
+            "BRADESCO": 2520.18,
+            "empresa": "Total Geral",
+            "BANESPA": 248444.57,
+            "ITAU": 1438857.06,
+            "totalEmpresa": 1763818.02
+        }
+    ]
+}
