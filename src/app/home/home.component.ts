@@ -74,9 +74,9 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     // this.atualizaDados();
-    this.intervalId = setInterval(() => {
-      this.atualizaDados();
-    }, 300000); // 300000 ms = 5 minutos
+    // this.intervalId = setInterval(() => {
+    //   this.atualizaDados();
+    // }, 300000); // 300000 ms = 5 minutos
   }
 
   ngOnDestroy(): void {
