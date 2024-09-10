@@ -126,7 +126,9 @@ export class HomeComponent implements OnInit, OnDestroy {
       },
       error: (erro) => {
         this.loadingTable = false;
-        this.poNotification.error(`${erro.mensagem}`);
+        this.poNotification.error(
+          'Não foi possível buscar as informações no momento. Por favor, tente novamente mais tarde.'
+        );
       },
     });
   }
