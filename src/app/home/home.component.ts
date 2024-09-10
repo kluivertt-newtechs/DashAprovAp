@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   filtros: any = {
     empresa: '',
     estabelecimento: '',
-    dataTransacao: '',
+    dataTransacao: new Date(),
     dataBaixa: '',
     formaPagto: '',
     portador: '',
@@ -87,6 +87,13 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   atualizaDados() {
+    if (
+      this.filtros.dataTransacao === '' ||
+      this.filtros.dataTransacao === undefined
+    ) {
+      this.poNotification.warning('Informe uma data de transação válida');
+      return;
+    }
     this.escondeTimer = false;
     this.loadingTable = true;
     this.homeService.getDados(this.filtros).subscribe({
