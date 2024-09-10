@@ -1,94 +1,90 @@
-<po-page-default
-    p-title="Aprovação de Pagamento">
-    
-    <po-container class="po-sm-12">
-      <div class="po-row">
+<po-page-default p-title="Aprovação de Pagamento">
+  <po-container class="po-sm-12">
+    <div class="po-row">
+      <po-input
+        class="po-md-1.5"
+        p-label="Empresa"
+        [(ngModel)]="filtros.empresa"
+      ></po-input>
 
-        <po-input
-          class="po-md-1.5"
-            p-label="Empresa"
-            (ngModel)="filtros.empresa"
-        ></po-input>
+      <po-input
+        class="po-md-1"
+        p-label="Estabelec."
+        [(ngModel)]="filtros.estabelecimento"
+      ></po-input>
 
-        <po-input
-          class="po-md-1"
-          p-label="Estabelec."
-          [(ngModel)]="filtros.estabelecimento"
-        ></po-input>
+      <po-datepicker
+        class="po-md-2"
+        p-label="Data da Transação"
+        p-format="dd/mm/yyyy"
+        [(ngModel)]="filtros.dataTransacao"
+      ></po-datepicker>
 
-        <po-datepicker
-            class="po-md-2"
-            p-label="Data da Transação"
-            p-format="dd/mm/yyyy"
-            [(ngModel)]="filtros.dataTransacao"
-        ></po-datepicker>
+      <po-datepicker
+        class="po-md-2"
+        p-label="Data da Baixa"
+        p-format="dd/mm/yyyy"
+        [(ngModel)]="filtros.dataBaixa"
+      ></po-datepicker>
 
-        <po-datepicker
-            class="po-md-2"
-            p-label="Data da Baixa"
-            p-format="dd/mm/yyyy"
-            [(ngModel)]="filtros.dataBaixa"
-        ></po-datepicker>
+      <po-input
+        class="po-md-1"
+        p-label="Forma.Pagto"
+        [(ngModel)]="filtros.formaPagto"
+      ></po-input>
 
-        <po-input
-          class="po-md-1"
-          p-label="Forma.Pagto"
-          [(ngModel)]="filtros.formaPagto"
-        ></po-input>
+      <po-input
+        class="po-md-1.5"
+        p-label="Portador"
+        [(ngModel)]="filtros.portador"
+      ></po-input>
 
-        <po-input
-          class="po-md-1.5"
-          p-label="Portador"
-          [(ngModel)]="filtros.portador"
-        ></po-input>
+      <po-button
+        #Imprime
+        class="po-m-4 po-ml-2"
+        p-tooltip="Gera impressão da tabela"
+        p-icon="po-icon-print"
+        (p-click)="geraRelatorio()"
+      ></po-button>
 
-        <po-button #Imprime
-          class="po-m-4 po-ml-2"
-          p-tooltip="Gera impressão da tabela"
-          p-icon="po-icon-print"
-          (p-click)="geraRelatorio()"
-        ></po-button>
+      <po-button
+        #Atualiza
+        class="po-m-4 po-ml-0"
+        p-tooltip="Atualiza Tabela"
+        p-icon="po-icon-refresh"
+        (p-click)="atualizaDados()"
+      ></po-button>
+    </div>
+  </po-container>
 
-        <po-button #Atualiza
-          class="po-m-4 po-ml-0"
-          p-tooltip="Atualiza Tabela"
-          p-icon="po-icon-refresh"
-          (p-click)="atualizaDados()"
-        ></po-button>
-        
-      </div>
+  <div class="po-sm-4"></div>
 
-    </po-container>
-
-    <div class="po-sm-4"></div>
-
-    <po-container class="po-sm-12">
-      <po-table
-        [p-columns]="columnsDash"
-        [p-items]="itensDash"
-        p-hide-columns-manager="true"
-        (p-expanded)="MostraDetalheEmpresa($event)"
-        [p-hide-detail]="false">
-
-        <ng-template #expandedTemplate let-item
-          p-table-row-template
-          let-rowErro
-          let-i="rowSelect"
-          [p-table-row-template-show]="habilitaDetalhe">
-
-          <po-table class="po-md-12"
-             [p-columns]="columnsDetalhe"
-             [p-items]="itensDetalhe"
-             [p-hide-columns-manager]="true"
-             p-container="true"
-             [p-infinite-scroll]="true" 
-             [p-height]="250"  
-          ></po-table>
-
-        </ng-template>
-
-      </po-table>
-    
-    </po-container>   
-
+  <po-container class="po-sm-12">
+    <po-table
+      [p-columns]="columnsDash"
+      [p-items]="itensDash"
+      p-hide-columns-manager="true"
+      (p-expanded)="MostraDetalheEmpresa($event)"
+      [p-hide-detail]="false"
+    >
+      <ng-template
+        #expandedTemplate
+        let-item
+        p-table-row-template
+        let-rowErro
+        let-i="rowSelect"
+        [p-table-row-template-show]="habilitaDetalhe"
+      >
+        <po-table
+          class="po-md-12"
+          [p-columns]="columnsDetalhe"
+          [p-items]="itensDetalhe"
+          [p-hide-columns-manager]="true"
+          p-container="true"
+          [p-infinite-scroll]="true"
+          [p-height]="250"
+        ></po-table>
+      </ng-template>
+    </po-table>
+  </po-container>
 </po-page-default>
